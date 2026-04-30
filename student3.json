@@ -1,0 +1,15 @@
+[
+    {
+        "name": "Frank",
+        "grades": {
+            "90": "Math",
+            "84": "java"
+        }
+    },
+    {
+        "name": "Mary",
+        "grades": {
+            "93": "python"
+        }
+    }
+]

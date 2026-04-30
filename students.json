@@ -1,0 +1,39 @@
+[
+    {
+        "name": "Francis maina",
+        "grades": {
+            "Java": 89,
+            "math": 85
+        }
+    },
+    {
+        "name": "Mark Maina",
+        "grades": {
+            "Python ": 56
+        }
+    },
+    {
+        "name": "Edwin Kariuki",
+        "grades": {
+            "Math": 69
+        }
+    },
+    {
+        "name": "Elvis Waweru",
+        "grades": {
+            "Java": 78
+        }
+    },
+    {
+        "name": "Mark Muita ",
+        "grades": {
+            "Java": 80
+        }
+    },
+    {
+        "name": "George Maingi",
+        "grades": {
+            "Java": 73
+        }
+    }
+]

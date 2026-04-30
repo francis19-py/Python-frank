@@ -1,0 +1,7 @@
+{
+    "name": "Frank",
+    "grades": {
+        "math": 90,
+        "python": 83
+    }
+}
