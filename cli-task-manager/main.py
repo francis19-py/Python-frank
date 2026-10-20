@@ -1,14 +1,18 @@
+import json
 tasks = []
+next_id = 1
 
 def add_tasks():
+    global next_id
     title = input("Enter the task title: ")
 
     task = {
-        "id": len(tasks) + 1,
+        "id": next_id,
         "title": title,
         "completed": False
     }
     tasks.append(task)
+    next_id += 1
     print("task completed successfully ")
 
 def list_tasks():
@@ -69,7 +73,12 @@ def delete_task():
             print("Task deleted successfully.")
             return
     print("Task not found!")   
- 
+
+def save_tasks():
+    with open ("tasks.json", "w") as file:
+        json.dump(tasks, file, indent=4)
+
+    print("Tasks saved successsfully !") 
 
 
 
@@ -84,7 +93,8 @@ while True:
     print("3. update a  Task")
     print("4. mark a task as complete")
     print("5. Delete a Task")
-    print("6. Exit")
+    print("6. save tasks")
+    print("7. Exit")
 
     choice = input("choose an option")
     if choice == "1":
@@ -96,8 +106,10 @@ while True:
     elif  choice == "4":
         mark_as_complete()
     elif choice == "5":
-        delete_task()   
-    elif  choice == "6":
+        delete_task() 
+    elif choice == "6":
+        save_tasks()
+    elif  choice == "7":
         print("Exiting the program...")
         break
     else:
