@@ -1,3 +1,80 @@
+tasks = []
+
+def add_tasks():
+    title = input("Enter the task title: ")
+
+    task = {
+        "id": len(tasks) + 1,
+        "title": title,
+        "completed": False
+    }
+    tasks.append(task)
+    print("task completed successfully ")
+
+def list_tasks():
+    if not tasks:
+        print("NO tasks available ")
+        return
+    print("/n -----------your tasks----------------")
+
+    for task in tasks:
+            if task ["completed"]:
+                status = "Completed"
+            else:
+                status = "Pending"
+            print(f"ID: {task['id']} | Title: {task['title']} | Status: {status}")
+
+def update_task():
+    try:
+        task_id = int(input("Enter the task id to update: "))
+    except ValueError:
+        print("please enter a valid integer for the task")
+        return
+    for task in tasks:
+        if task["id"] == task_id:
+            new_title = input ("Enter the new task title: ").strip()
+
+            if not new_title:
+                print("task title cannot be empty")
+                return
+    task["title"] = new_title
+    print("task updated successfully")
+    return
+    print("task not found !")
+
+def mark_as_complete():
+    try:
+        task_id = int (input("Enter the task id to mark as complete: "))
+    except ValueError:
+        print("Please enter a valid integer: ")
+        return
+
+    for task in tasks:
+        if task["id"] == task_id:
+            task["completed"] = True
+            print("Task completed ")
+            return
+    print("task not found !")
+
+def delete_task():
+    try:
+        task_id = int(input("Enter the task id to delete: "))
+    except ValueError:
+        print("Please enter a valid integer for the task id.")
+        return
+
+    for task in tasks:
+        if task["id"] == task_id:
+            tasks.remove(task)
+            print("Task deleted successfully.")
+            return
+    print("Task not found!")   
+ 
+
+
+
+
+
 while True:
     print("/n ======================")
     print("    CLI TASK MANAGER")
@@ -10,11 +87,19 @@ while True:
     print("6. Exit")
 
     choice = input("choose an option")
-
-    if choice == "6":
+    if choice == "1":
+        add_tasks()
+    elif  choice == "2":
+        list_tasks()
+    elif choice == "3":
+        update_task()    
+    elif  choice == "4":
+        mark_as_complete()
+    elif choice == "5":
+        delete_task()   
+    elif  choice == "6":
         print("Exiting the program...")
         break
     else:
-        print("you selected option:", choice)
+        print("The feature is not ready yet. Please choose another option.")
 
-        
