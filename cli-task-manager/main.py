@@ -80,8 +80,21 @@ def save_tasks():
 
     print("Tasks saved successsfully !") 
 
+def load_tasks():
+    global tasks, next_id
 
+    try:
+        with open("tasks.json", "r") as file:
+            tasks = json.load(file)
+            if tasks:
+                next_id = max(task["id"] for task in tasks) + 1
+            else:
+                next_id = 1
 
+            print ("Tasks loaded successfully!")
+
+    except FileNotFoundError:
+        print("no saved tasks found. starting fresh...")
 
 
 while True:
