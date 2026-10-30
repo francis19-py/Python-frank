@@ -61,9 +61,9 @@ while True:
      else:
           print("invalid choice!")
 
-
+students_data =[student.__dict__ for student in students]#convert the list of objects into a list of dictionaries
 with open ("data1.json", "w") as file:
-    json.dump( students, file, indent=4)          
+    json.dump(students_data, file, indent=4)          
 
 
 
