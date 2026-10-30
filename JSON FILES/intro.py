@@ -17,73 +17,42 @@ with open("student.json", "r") as file:
 print(data)
 print(data["grades"]["math"])
 #json.load ()converts the file back into a dictionary
-
 '''
-1. storing data in a file is called serialization
-    student = {
+1. storing python data in a json file
+   student = {
     "name": "Frank",
     "age": 21,
     "course": "Computer Science"
-    }
-     save it as json
-     import json
+}
+save it a  json 
+import json
 
     with open("student.json", "w") as file:
-      json.dump(student, file, indent=4)
+         json.dump(student, file, indent=4)
+the file becomes:
+    import json
 
-      THE FILE 
+with open("student.json", "w") as file:
+    json.dump(student, file, indent=4)
+
+
+
+2. reading the json file back into python
+         import json
+
+            with open("student.json", "r") as file:
+                student = json.load(file)
+
+        print(student["name"])
+
         
-      {
-        "name": "Frank",
-        "age": 21,
-        "course": "Computer Science"
-      }
-
-2. reading JSON data into python
-           {
-    "name": "Frank",
-    "age": 21,
-    "course": "Computer Science"
-    }
-
-    THE BASIC RELATIONSHIP 
-      Python Dictionary
-       ↓
-     json.dump()
-        ↓
-     JSON File
-        ↓
-        json.load()
-        ↓
-        Python Dictionary
-
-3. JSON and APIs
-  Important for backend develpment 
-  for exapmple , a frontend might send 
-        {
-    "username": "frank",
-    "email": "frank@example.com"
-    }
-
-    python backend can receive this data and convert it into a dictionary using json.load() and then process it accordingly.
-    {
-    "message": "User created successfully"
-}
-Frameworks such as Flask and FastAPI commonly work with JSON when building REST APIs.
-
-4. JSON VS PYTHON
-
-    JSON              Python
---------------------------------
-    object       →    dictionary
-    array        →    list
-    string       →    str
-    number       →    int/float
-    true         →    True
-    false        →    False
-    null         →    None 
+3. json and APIs
+    imortant for backend development
+    eg  a frontend might send a request to a backend server to get some data in json format
 
     
+
+
 
 
 '''
