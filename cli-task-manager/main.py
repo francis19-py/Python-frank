@@ -96,6 +96,9 @@ def load_tasks():
     except FileNotFoundError:
         print("no saved tasks found. starting fresh...")
 
+def sort_tasks():
+    tasks.sort(key=lambda x: x["id"])
+    print("Tasks sorted by ID successfully!")
 
 while True:
     print("/n ======================")
@@ -107,7 +110,8 @@ while True:
     print("4. mark a task as complete")
     print("5. Delete a Task")
     print("6. save tasks")
-    print("7. Exit")
+    print("7. sort tasks by id ")
+    print("8. Exit")
 
     choice = input("choose an option")
     if choice == "1":
@@ -123,6 +127,8 @@ while True:
     elif choice == "6":
         save_tasks()
     elif  choice == "7":
+        sort_tasks()
+    elif choice == "8":
         print("Exiting the program...")
         break
     else:
