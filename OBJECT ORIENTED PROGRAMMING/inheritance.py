@@ -20,6 +20,7 @@ class Student(person):
         print(f"Course: {self.course}")
         
 student1 = Student("Frank", 24, "computer science")
-student1 = Student("Leon", 25, "mathematics")
+student2 = Student("Leon", 25, "mathematics")
 
 student1.display_details()
+student2.display_details()
